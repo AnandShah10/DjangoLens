@@ -5,7 +5,6 @@
 Architecture linting · N+1 detection · Migration risk · Signals · Settings drift · Admin UX · URL explorer · API contract drift · Runtime SQL reports · CI/CLI
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub release](https://img.shields.io/github/v/release/AnandShah10/DjangoLens?include_prereleases&style=flat)](https://github.com/AnandShah10/DjangoLens/releases)
 [![GitHub stars](https://img.shields.io/github/stars/AnandShah10/DjangoLens?style=social)](https://github.com/AnandShah10/DjangoLens)
 [![GitHub issues](https://img.shields.io/github/issues/AnandShah10/DjangoLens)](https://github.com/AnandShah10/DjangoLens/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/AnandShah10/DjangoLens)](https://github.com/AnandShah10/DjangoLens/commits)
