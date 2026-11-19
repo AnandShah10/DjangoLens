@@ -1,0 +1,27 @@
+{
+  "architecture": {
+    "orders": {
+      "canImport": ["users", "payments"]
+    },
+    "payments": {
+      "cannotImport": ["orders"]
+    }
+  },
+  "analyzers": {
+    "architecture": true,
+    "orm": true,
+    "migrations": true,
+    "signals": true,
+    "settings": true,
+    "admin": true,
+    "models_health": true,
+    "unused": true,
+    "unused_urls": true,
+    "unused_signals": true,
+    "deprecated_apis": true
+  },
+  "suppress": [],
+  "discovery": {
+    "extra_app_roots": []
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "name": "djangolens",
+  "displayName": "DjangoLens",
+  "description": "Deep Django codebase intelligence: architecture linting, N+1 detection, migration risk, signals, settings drift, admin UX, URL explorer, API contract drift, and CI-ready CLI. Local-only analysis.",
+  "version": "0.25.0",
+  "publisher": "AnandShah",
+  "author": {
+    "name": "Anand Shah"
+  },
+  "icon": "resources/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnandShah10/DjangoLens"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "django",
+    "python",
+    "orm",
+    "architecture",
+    "n+1",
+    "migrations",
+    "signals",
+    "drf",
+    "linter",
+    "static-analysis",
+    "code-quality"
+  ],
+  "activationEvents": [
+    "workspaceContains:manage.py"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "djangolens.scan",
+        "title": "DjangoLens: Scan Project",
+        "icon": "$(search)"
+      },
+      {
+        "command": "djangolens.refresh",
+        "title": "DjangoLens: Refresh Index",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "djangolens.analyzeTestImpact",
+        "title": "DjangoLens: Analyze Test Impact",
+        "icon": "$(beaker)"
+      },
+      {
+        "command": "djangolens.showSettingsOverview",
+        "title": "DjangoLens: Show Settings Overview",
+        "icon": "$(settings-gear)"
+      },
+      {
+        "command": "djangolens.showRuntimeReport",
+        "title": "DjangoLens: Show Runtime Report",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "djangolens.analyzePerformance",
+        "title": "DjangoLens: Analyze Django Performance",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "djangolens.setupRuntime",
+        "title": "DjangoLens: Setup Runtime Instrumentation",
+        "icon": "$(plug)"
+      },
+      {
+        "command": "djangolens.showApiContractDrift",
+        "title": "DjangoLens: Compare API Contract",
+        "icon": "$(diff)"
+      },
+      {
+        "command": "djangolens.showSignalChains",
+        "title": "DjangoLens: Show Signal Chains",
+        "icon": "$(type-hierarchy)"
+      },
+      {
+        "command": "djangolensUrls.refresh",
+        "title": "DjangoLens: Refresh URL Explorer",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "djangolensIssues.refresh",
+        "title": "DjangoLens: Refresh Issues",
+        "icon": "$(refresh)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "djangolens",
+          "title": "DjangoLens",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "djangolens": [
+        {
+          "id": "djangolensIssues",
+          "name": "Issues",
+          "icon": "$(warning)",
+          "contextualTitle": "DjangoLens Issues"
+        },
+        {
+          "id": "djangolensUrls",
+          "name": "URLs",
+          "icon": "$(link)",
+          "contextualTitle": "DjangoLens URLs"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "djangolensUrls.refresh",
+          "when": "view == djangolensUrls",
+          "group": "navigation"
+        },
+        {
+          "command": "djangolensIssues.refresh",
+          "when": "view == djangolensIssues",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "djangolens.analyzeTestImpact",
+          "when": "resourceLangId == python",
+          "group": "djangolens"
+        },
+        {
+          "command": "djangolens.analyzePerformance",
+          "when": "resourceLangId == python",
+          "group": "djangolens"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "djangolens.analyzeTestImpact",
+          "when": "resourceLangId == python",
+          "group": "djangolens"
+        },
+        {
+          "command": "djangolens.analyzePerformance",
+          "when": "resourceLangId == python",
+          "group": "djangolens"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "DjangoLens",
+      "properties": {
+        "djangolens.pythonPath": {
+          "type": "string",
+          "default": "python3",
+          "description": "Path to the Python interpreter used to run DjangoLens' static analyzers."
+        },
+        "djangolens.configPath": {
+          "type": "string",
+          "default": "djangolens.config.json",
+          "description": "Path (relative to the workspace root) to the DjangoLens architecture configuration file."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0"
+  },
+  "homepage": "https://github.com/AnandShah10/DjangoLens",
+  "bugs": {
+    "url": "https://github.com/AnandShah10/DjangoLens/issues"
+  }
+}
